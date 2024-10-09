@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="textarea" placeholder="Enter text"></textarea>
+    <button onclick="Speak()">Speak</button>
+    <script>
+        var speech = new SpeechSynthesisUtterance();
+        function Speak(){
+            var text = document.getElementById('textarea').value;
+            if(text.trim() !=""){
+                speech.text=text;
+                speech.rate=1;
+                speech.volume=1;
+                speech.pitch=1;
+                window.speechSynthesis.speak(speech);
+            }
+            else{
+                alert("Please enter text");
+            }
+        }
+    </script>
+</body>
+</html>
